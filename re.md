@@ -1,2 +1,0 @@
-ansumin
-dkssudgktpdy
