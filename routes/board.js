@@ -1,16 +1,9 @@
-var express = require('express')
-var router = express.Router()
-var mariadb = require("./maria")
-var conn = mariadb.init()
+'use strict'
 
-router.get('/list/:page', function(req, res, next){
-    var page = req.params.page;
-    var sql = "select * from board"
+const express = require('express');
+const router = express.Router();
+const boardController = require('../controllers/boardController');
 
-    conn.query(sql, function(err, rows){
-        if(err) console.error("err : " + err)
-        res.render('list', {title : '게시판 리스트', rows : rows})
-    })
-})
+router.get('/', boardController.board);
 
 module.exports = router;
