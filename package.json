@@ -6,11 +6,25 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
+    "connect": "^3.7.0",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "ejs": "~2.6.1",
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
+    "mariadb": "^3.0.0",
     "morgan": "~1.9.1"
-  }
+  },
+  "description": "테스트 코드 재시작!",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://zjarhdsumin@github.com/zjarhdsumin/test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zjarhdsumin/test/issues"
+  },
+  "homepage": "https://github.com/zjarhdsumin/test#readme"
 }
