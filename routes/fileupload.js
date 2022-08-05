@@ -7,6 +7,7 @@ const _ = require('lodash');
 const morgan = require('morgan');
 const router = express.Router();
 
+
 router.use(fileupload({
     createParentPath : true
 })); //파일 업로드 허용
@@ -23,28 +24,32 @@ router.get('/', function(req, res){
     res.render('upload');
 })
 
-router.post('/', async(req, res) => {
-    try{
-        if(!req.files){
-            res.send({status : false, message : '파일 업로드 실패'});
-        }
-        else{
-            let f = req.files.uploadFile;
-            f.mv('./public/upload/' + f.name);
-            res.send({
-                status : true,
-                message : '파일 업로드 성공',
-                data : {
-                    name : f.name,
-                    minetype : f.minetype,
-                    size : f.size
-                }
-            })
-        }
-    }
-    catch(err){
-        res.status(500).send(err);
-    }
-})
+
+router.post('/', f)
+
+
+// router.post('/', async(req, res) => {
+//     try{
+//         if(!req.files){
+//             res.send({status : false, message : '파일 업로드 실패'});
+//         }
+//         else{
+//             let f = req.files.uploadFile;
+//             f.mv('./public/upload/' + f.name);
+//             res.send({
+//                 status : true,
+//                 message : '파일 업로드 성공',
+//                 data : {
+//                     name : f.name,
+//                     minetype : f.minetype,
+//                     size : f.size
+//                 }
+//             })
+//         }
+//     }
+//     catch(err){
+//         res.status(500).send(err);
+//     }
+// })
 
 module.exports = router;
