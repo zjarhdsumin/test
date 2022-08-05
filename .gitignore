@@ -3,3 +3,5 @@ maria.js
 .env
 
 .public/upload/
+
+.node_modules
